@@ -1,19 +1,15 @@
 import pyrosim.pyrosim as pyrosim
 
-length = 1
-width = 1
-height = 1
+def Create_World():
+    pyrosim.Start_SDF("box.sdf")
+    pyrosim.Send_Cube(name="Box", pos=[2,2,0.5] , size=[1,1,1])
+    pyrosim.End()
 
-x = 0
-y = 0
-z = 0.5 #middle of the block at .5 will be ground since it's height is 1
+Create_World()
 
-a = 0
-b = 1
-c = 1.5
+def Create_Robot():
+    pyrosim.Start_URDF("body.urdf")
+    pyrosim.Send_Cube(name="Torso", pos=[0,0,0.5] , size=[1,1,1])
+    pyrosim.End()  
 
-
-pyrosim.Start_SDF("box.sdf")
-pyrosim.Send_Cube(name="Box", pos=[x,y,z] , size=[length,width,height])
-pyrosim.Send_Cube(name="Box2", pos=[a,b,c] , size=[length,width,height])
-pyrosim.End()
+Create_Robot() 
