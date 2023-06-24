@@ -9,6 +9,8 @@ p.setAdditionalSearchPath(pybullet_data.getDataPath())
 p.setGravity(0,0,-9.8) #adds gravity
 
 planeId = p.loadURDF("plane.urdf") #adds floor
+robotId = p.loadURDF("body.urdf") #adds robot body
+
 
 p.loadSDF("box.sdf") #adds box
 
